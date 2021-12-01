@@ -1,0 +1,8 @@
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\bin\Debug\Part 2.exe.config
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\bin\Debug\Part 2.exe
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\bin\Debug\Part 2.pdb
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\obj\Debug\Part 2.csproj.AssemblyReference.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\obj\Debug\Part 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\obj\Debug\Part 2.csproj.CoreCompileInputs.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\obj\Debug\Part 2.exe
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 2\obj\Debug\Part 2.pdb
