@@ -3,7 +3,7 @@
  * Programmer: Andrew Stobart
  * Date: December 10, 2021
  * 
- * Day 4 Part 1
+ * Day 4 Part 2
  * 
  */
 
@@ -16,7 +16,7 @@ using System.IO;
 using System.Collections;
 using System.Data;
 
-namespace Part_1
+namespace Part_2
 {
     internal class Program
     {
@@ -36,13 +36,13 @@ namespace Part_1
             //read the data into variables
             foreach (var line in lines)
             {
-                string[] stringSeparators = new string[] {" ", ","};
+                string[] stringSeparators = new string[] { " ", "," };
                 string[] subStrings = line.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
 
                 //our first line contains the numbers that we will be calling
                 if (count == 0)
                 {
-                    for (int x=0; x < subStrings.Length; x++)
+                    for (int x = 0; x < subStrings.Length; x++)
                     {
                         callNumbers.Add(subStrings[x]);
                     }
@@ -56,7 +56,7 @@ namespace Part_1
                 else if (line != "")
                 {
                     //populate card array one line at a time
-                    for (int loop=0; loop < 5; loop++)
+                    for (int loop = 0; loop < 5; loop++)
                     {
                         bingoCard[row, loop] = subStrings[loop];
                     }
@@ -85,7 +85,7 @@ namespace Part_1
                     {
                         for (int cardCol = 0; cardCol < 5; cardCol++)
                         {
-                            if (bingoCardsList[bingoCardNumber][cardRow,cardCol] == callNumbers[callNumberLoop].ToString())
+                            if (bingoCardsList[bingoCardNumber][cardRow, cardCol] == callNumbers[callNumberLoop].ToString())
                             {
                                 //put "C-" in front of a number once it has been called
                                 bingoCardsList[bingoCardNumber][cardRow, cardCol] = "C-" + bingoCardsList[bingoCardNumber][cardRow, cardCol];
@@ -102,19 +102,20 @@ namespace Part_1
                         for (int colCheck = 0; colCheck < 5; colCheck++)
                         {
                             //get the first character in the cell. If it starts with 'C' then that number has been called
-                            if (bingoCardsList[bingoCardNumber][rowCheck,colCheck][0] == 'C')
+                            if (bingoCardsList[bingoCardNumber][rowCheck, colCheck][0] == 'C')
                             {
                                 winner++;
-                                if (winner == 5)
+                                if (winner == 5 && bingoCardsList[bingoCardNumber][0,0][0] != 'W') //don't calculate a puzzleAnswer if the card has previously won
                                 {
                                     //we have a winner. Calculate the puzzle answer
                                     puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
+                                    
+                                    //mark the card as a winner
+                                    bingoCardsList[bingoCardNumber][0, 0] = "W-" + bingoCardsList[bingoCardNumber][0,0];
 
                                     //break out of the loop here
                                     colCheck = 5;
                                     rowCheck = 5;
-                                    bingoCardNumber = bingoCardsList.Count;
-                                    callNumberLoop = callNumbers.Count;
                                 }
                             }
                             //move on as this row will not be a winner if any cell does not have a C in it
@@ -138,16 +139,17 @@ namespace Part_1
                                 if (bingoCardsList[bingoCardNumber][rowCheck, colCheck][0] == 'C')
                                 {
                                     winner++;
-                                    if (winner == 5)
+                                    if (winner == 5 && bingoCardsList[bingoCardNumber][0, 0][0] != 'W') //don't calculate a puzzleAnswer if the card has previously won
                                     {
                                         //we have a winner. Calculate the puzzle answer
                                         puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
 
+                                        //mark the card as a winner
+                                        bingoCardsList[bingoCardNumber][0, 0] = "W-" + bingoCardsList[bingoCardNumber][0, 0];
+
                                         //break out of the loop here
                                         colCheck = 5;
                                         rowCheck = 5;
-                                        bingoCardNumber = bingoCardsList.Count;
-                                        callNumberLoop = callNumbers.Count;
                                     }
                                 }
                                 //move on as this row will not be a winner if any cell does not have a C in it
@@ -162,15 +164,12 @@ namespace Part_1
             }
 
 
-            if (winner == 5)
-            {
-                Console.WriteLine("We have a winner!");
-                Console.WriteLine("The puzzle answer is " + puzzleAnswer);
-            }
-            else
-            {
-                Console.WriteLine("No cards won.");
-            }
+            
+            
+            //will be the puzzleAnswer of the last card that won
+            Console.WriteLine("The puzzle answer is " + puzzleAnswer);
+            
+
 
             watch.Stop();
             Console.WriteLine("");
@@ -178,15 +177,14 @@ namespace Part_1
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
-
-        public static int calculateAnswer(string lastCalledNumber,string[,] winningBoard)
+        public static int calculateAnswer(string lastCalledNumber, string[,] winningBoard)
         {
             int answer = 0;
             for (int row = 0; row < 5; row++)
             {
                 for (int col = 0; col < 5; col++)
                 {
-                    if (winningBoard[row,col][0] != 'C')
+                    if (winningBoard[row, col][0] != 'C')
                     {
                         answer += Convert.ToInt32(winningBoard[row, col]);
                     }
