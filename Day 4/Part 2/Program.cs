@@ -1,7 +1,7 @@
 ﻿/* Advent of Code 2021
  * 
  * Programmer: Andrew Stobart
- * Date:
+ * Date: December 10, 2021
  * 
  * Day 4 Part 2
  * 
@@ -99,24 +99,23 @@ namespace Part_2
                     //check rows for a winner
                     for (int rowCheck = 0; rowCheck < 5; rowCheck++)
                     {
-                        //Console.WriteLine("Last called number " + lastCalledNumber + ". Checking card number " + bingoCardNumber + " row rowCheck.");
                         for (int colCheck = 0; colCheck < 5; colCheck++)
                         {
                             //get the first character in the cell. If it starts with 'C' then that number has been called
                             if (bingoCardsList[bingoCardNumber][rowCheck, colCheck][0] == 'C')
                             {
                                 winner++;
-                                if (winner == 5)
+                                if (winner == 5 && bingoCardsList[bingoCardNumber][0,0][0] != 'W') //don't calculate a puzzleAnswer if the card has previously won
                                 {
                                     //we have a winner. Calculate the puzzle answer
                                     puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
-                                    Console.WriteLine("The puzzle answer is " + puzzleAnswer);
-                                    //Console.WriteLine("Winner found on row.");
+                                    
+                                    //mark the card as a winner
+                                    bingoCardsList[bingoCardNumber][0, 0] = "W-" + bingoCardsList[bingoCardNumber][0,0];
+
                                     //break out of the loop here
-                                    //colCheck = 5;
-                                    //rowCheck = 5;
-                                    //bingoCardNumber = bingoCardsList.Count;
-                                    //callNumberLoop = callNumbers.Count;
+                                    colCheck = 5;
+                                    rowCheck = 5;
                                 }
                             }
                             //move on as this row will not be a winner if any cell does not have a C in it
@@ -134,26 +133,23 @@ namespace Part_2
                         //check cols for a winner
                         for (int colCheck = 0; colCheck < 5; colCheck++)
                         {
-                            //Console.WriteLine("Last called number " + lastCalledNumber + ". Checking card number " + bingoCardNumber + " col Check.");
                             for (int rowCheck = 0; rowCheck < 5; rowCheck++)
                             {
                                 //get the first character in the cell. If it starts with 'C' then that number has been called
                                 if (bingoCardsList[bingoCardNumber][rowCheck, colCheck][0] == 'C')
                                 {
                                     winner++;
-                                    if (winner == 5)
+                                    if (winner == 5 && bingoCardsList[bingoCardNumber][0, 0][0] != 'W') //don't calculate a puzzleAnswer if the card has previously won
                                     {
                                         //we have a winner. Calculate the puzzle answer
                                         puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
-                                        Console.WriteLine("The puzzle answer is " + puzzleAnswer);
-                                        //Console.WriteLine("Winner found on col.");
+
+                                        //mark the card as a winner
+                                        bingoCardsList[bingoCardNumber][0, 0] = "W-" + bingoCardsList[bingoCardNumber][0, 0];
 
                                         //break out of the loop here
-                                        //colCheck = 5;
-                                        //rowCheck = 5;
-                                        //bingoCardNumber = bingoCardsList.Count;
-                                        //callNumberLoop = callNumbers.Count;
-                                        //puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
+                                        colCheck = 5;
+                                        rowCheck = 5;
                                     }
                                 }
                                 //move on as this row will not be a winner if any cell does not have a C in it
@@ -170,7 +166,7 @@ namespace Part_2
 
             
             
-            
+            //will be the puzzleAnswer of the last card that won
             Console.WriteLine("The puzzle answer is " + puzzleAnswer);
             
 

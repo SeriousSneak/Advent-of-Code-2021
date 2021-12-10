@@ -99,7 +99,6 @@ namespace Part_1
                     //check rows for a winner
                     for (int rowCheck = 0; rowCheck < 5; rowCheck++)
                     {
-                        //Console.WriteLine("Last called number " + lastCalledNumber + ". Checking card number " + bingoCardNumber + " row rowCheck.");
                         for (int colCheck = 0; colCheck < 5; colCheck++)
                         {
                             //get the first character in the cell. If it starts with 'C' then that number has been called
@@ -111,7 +110,6 @@ namespace Part_1
                                     //we have a winner. Calculate the puzzle answer
                                     puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
 
-                                    //Console.WriteLine("Winner found on row.");
                                     //break out of the loop here
                                     colCheck = 5;
                                     rowCheck = 5;
@@ -134,7 +132,6 @@ namespace Part_1
                         //check cols for a winner
                         for (int colCheck = 0; colCheck < 5; colCheck++)
                         {
-                            //Console.WriteLine("Last called number " + lastCalledNumber + ". Checking card number " + bingoCardNumber + " col Check.");
                             for (int rowCheck = 0; rowCheck < 5; rowCheck++)
                             {
                                 //get the first character in the cell. If it starts with 'C' then that number has been called
@@ -145,7 +142,6 @@ namespace Part_1
                                     {
                                         //we have a winner. Calculate the puzzle answer
                                         puzzleAnswer = calculateAnswer(lastCalledNumber, bingoCardsList[bingoCardNumber]);
-                                        //Console.WriteLine("Winner found on col.");
 
                                         //break out of the loop here
                                         colCheck = 5;
