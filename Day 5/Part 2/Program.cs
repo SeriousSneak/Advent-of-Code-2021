@@ -1,9 +1,9 @@
 ﻿/* Advent of Code 2021
  * 
  * Programmer: Andrew Stobart
- * Date: December 16, 2021
+ * Date:
  * 
- * Day 5 Part 1
+ * Day 5 Part 2
  * 
  */
 
@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Part_1
+namespace Part_2
 {
     internal class Program
     {
@@ -26,15 +26,15 @@ namespace Part_1
             List<int[]> ventLines = new List<int[]>();
             int[] inputRow = new int[4];
 
-            var lines = File.ReadLines(@"C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 5\Part 1\input.txt");
+            var lines = File.ReadLines(@"C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 5\Part 2\input_test.txt");
 
             int largestInputNumber = 0; //will be used to calculate how big our ventMap array should be
             foreach (var line in lines)
             {
-                string[] stringSeparators = new string[] { " ",",","->" };
+                string[] stringSeparators = new string[] { " ", ",", "->" };
                 string[] subStrings = line.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
 
-                for (int x=0; x<4; x++)
+                for (int x = 0; x < 4; x++)
                 {
                     inputRow[x] = Convert.ToInt32(subStrings[x]);
 
@@ -52,7 +52,7 @@ namespace Part_1
             //int[,] ventMap = new int[10, 10];   //hard coded for testing
 
             //loop through the input
-            for (int count=0; count<ventLines.Count; count++)
+            for (int count = 0; count < ventLines.Count; count++)
             {
                 int x1 = ventLines[count][0];
                 int y1 = ventLines[count][1];
@@ -101,6 +101,10 @@ namespace Part_1
                         ventMap[horizontalPosition, y1] += 1;
                     }
                 }
+                else //the line is vertical
+                {
+                    //write code here to handle horizontal lines
+                }
 
             }
 
@@ -112,7 +116,7 @@ namespace Part_1
             {
                 for (int y = 0; y < ventMap.GetLength(0); y++)
                 {
-                    if (ventMap[x,y] >= 2)
+                    if (ventMap[x, y] >= 2)
                     {
                         answer++;
                     }
