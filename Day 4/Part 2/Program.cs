@@ -62,7 +62,6 @@ namespace Part_2
                     }
                     row++;
 
-                    //fill the last row of the card to all zeros
                     if (row == 5)
                     {
                         //this puts a copy of bingoCard into the list, as opposed to putting a reference in which would cause the value added to the list change if the original object changes
