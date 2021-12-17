@@ -1,9 +1,9 @@
 ﻿/* Advent of Code 2021
  * 
  * Programmer: Andrew Stobart
- * Date: December 16, 2021
+ * Date: December 17, 2021
  * 
- * Day 5 Part 1
+ * Day 5 Part 2
  * 
  */
 
@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Part_1
+namespace Part_2
 {
     internal class Program
     {
@@ -26,15 +26,15 @@ namespace Part_1
             List<int[]> ventLines = new List<int[]>();
             int[] inputRow = new int[4];
 
-            var lines = File.ReadLines(@"C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 5\Part 1\input.txt");
+            var lines = File.ReadLines(@"C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 5\Part 2\input.txt");
 
             int largestInputNumber = 0; //will be used to calculate how big our ventMap array should be
             foreach (var line in lines)
             {
-                string[] stringSeparators = new string[] { " ",",","->" };
+                string[] stringSeparators = new string[] { " ", ",", "->" };
                 string[] subStrings = line.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
 
-                for (int x=0; x<4; x++)
+                for (int x = 0; x < 4; x++)
                 {
                     inputRow[x] = Convert.ToInt32(subStrings[x]);
 
@@ -52,7 +52,7 @@ namespace Part_1
             //int[,] ventMap = new int[10, 10];   //hard coded for testing
 
             //loop through the input
-            for (int count=0; count<ventLines.Count; count++)
+            for (int count = 0; count < ventLines.Count; count++)
             {
                 int x1 = ventLines[count][0];
                 int y1 = ventLines[count][1];
@@ -101,8 +101,60 @@ namespace Part_1
                         ventMap[horizontalPosition, y1] += 1;
                     }
                 }
+                else //the line is diagonal
+                {
+                    //I want to loop such that I draw the line from left to right
+                    if (x1 < x2)
+                    {
+                        //x1 is on the left and x2 is on the right
+                        if (y1 < y2)   //line looks like \
+                        {
+                            for (int XPosition = x1; XPosition <= x2; XPosition++)
+                            {
+                                ventMap[XPosition, (y1 + (XPosition - x1))] += 1;
+                            }
+                        }
+                        else    //line looks like /
+                        {
+                            for (int XPosition = x1; XPosition <= x2; XPosition++)
+                            {
+                                ventMap[XPosition, (y1 - (XPosition - x1))] += 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //x2 is on the left and x1 is on the right
+                        if (y2 < y1)   //line looks like \
+                        {
+                            for (int XPosition = x2; XPosition <= x1; XPosition++)
+                            {
+                                ventMap[XPosition, (y2 + (XPosition - x2))] += 1;
+                            }
+                        }
+                        else    //line looks like /
+                        {
+                            for (int XPosition = x2; XPosition <= x1; XPosition++)
+                            {
+                                ventMap[XPosition, (y2 - (XPosition - x2))] += 1;
+                            }
+                        }
+                    }
+                }
 
             }
+
+            /*
+            //print out vent map
+            for (int y = 0; y < ventMap.GetLength(0); y++)
+            {
+                for (int x = 0; x < ventMap.GetLength(1); x++)
+                {
+                    Console.Write(ventMap[x, y] + " ");
+                }
+                Console.WriteLine();
+            }
+            */
 
 
             //find the number of points that have 2 or more lines crossing it
@@ -110,9 +162,9 @@ namespace Part_1
 
             for (int x = 0; x < ventMap.GetLength(0); x++)
             {
-                for (int y = 0; y < ventMap.GetLength(0); y++)
+                for (int y = 0; y < ventMap.GetLength(1); y++)
                 {
-                    if (ventMap[x,y] >= 2)
+                    if (ventMap[x, y] >= 2)
                     {
                         answer++;
                     }
@@ -122,7 +174,7 @@ namespace Part_1
 
             watch.Stop();
             Console.WriteLine("There are " + answer + " spaces that have 2 or more lines crossing it.");
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
