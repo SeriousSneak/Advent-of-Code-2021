@@ -48,14 +48,10 @@ namespace Part_1
             }
 
             int mapSize = (int)Math.Ceiling(largestInputNumber / 100.0) * 100;  //rounds to the nearest 100
-
-            //My input numbers are all under 10000. This is set to 10 for the test input which has all numbers under 10.
             int[,] ventMap = new int[mapSize, mapSize];
             //int[,] ventMap = new int[10, 10];   //hard coded for testing
 
-
             //loop through the input
-
             for (int count=0; count<ventLines.Count; count++)
             {
                 int x1 = ventLines[count][0];
@@ -108,19 +104,8 @@ namespace Part_1
 
             }
 
-            /*
-            //print out vent map
-            for (int y = 0; y < ventMap.GetLength(0); y++)
-            {
-                for (int x = 0; x < ventMap.GetLength(1); x++)
-                {
-                    Console.Write(ventMap[x,y] + " ");
-                }
-                Console.WriteLine();
-            }
-            */
 
-            //find the number of points that are 2 or more
+            //find the number of points that have 2 or more lines crossing it
             int answer = 0;
 
             for (int x = 0; x < ventMap.GetLength(0); x++)
@@ -133,10 +118,6 @@ namespace Part_1
                     }
                 }
             }
-
-
-
-
 
 
             watch.Stop();
