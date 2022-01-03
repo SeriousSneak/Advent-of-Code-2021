@@ -34,7 +34,7 @@ namespace Part_2
                 lanternFishList.Add(Convert.ToInt32(values[x]));
             }
 
-
+//initialize a long array here with 10 cells
 
 
             //Console.WriteLine("There would be " + lanternFishList.Count + " lantern fish.");
