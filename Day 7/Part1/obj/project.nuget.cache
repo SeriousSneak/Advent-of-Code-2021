@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DS7xzM5tq0y827/+wuxWgPvmuVXAV8WvZUC60q8VgxLDkgkY4DFiBtTgIKXXIKa47VqZtX8p6QJqZBhQDOnCbA==",
+  "success": true,
+  "projectFilePath": "/Users/andrew/Temp/Advent-of-Code-2021/Day 7/Part1/Part1.csproj",
+  "expectedPackageFiles": [
+    "/Users/andrew/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/Users/andrew/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/andrew/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.22/microsoft.netcore.app.host.osx-x64.3.1.22.nupkg.sha512"
+  ],
+  "logs": []
+}
