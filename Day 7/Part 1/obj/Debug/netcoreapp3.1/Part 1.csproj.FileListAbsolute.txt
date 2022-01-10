@@ -1,0 +1,14 @@
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.exe
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.deps.json
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.runtimeconfig.json
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.runtimeconfig.dev.json
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.dll
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\bin\Debug\netcoreapp3.1\Part 1.pdb
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.csproj.AssemblyReference.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.AssemblyInfoInputs.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.AssemblyInfo.cs
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.csproj.CoreCompileInputs.cache
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.dll
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.pdb
+C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 7\Part 1\obj\Debug\netcoreapp3.1\Part 1.genruntimeconfig.cache
