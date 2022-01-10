@@ -11,4 +11,3 @@
 /Users/andrew/Temp/Advent-of-Code-2021/Day 7/Part1/obj/Debug/netcoreapp3.1/Part1.dll
 /Users/andrew/Temp/Advent-of-Code-2021/Day 7/Part1/obj/Debug/netcoreapp3.1/Part1.pdb
 /Users/andrew/Temp/Advent-of-Code-2021/Day 7/Part1/obj/Debug/netcoreapp3.1/Part1.genruntimeconfig.cache
-/Users/andrew/Temp/Advent-of-Code-2021/Day 7/Part1/bin/Debug/netcoreapp3.1/Part1

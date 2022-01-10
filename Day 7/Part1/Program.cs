@@ -1,7 +1,7 @@
 ﻿/* Advent of Code 2021
  * 
  * Programmer: Andrew Stobart
- * Date:
+ * Date: January 9, 2022
  *
  * Project details
  *    Targeting .net Core 3.1
@@ -73,7 +73,22 @@ namespace Part1
 
             //371 is not correct. This is actually the number they need to align to. I now need to figure out how much fuel is used and that will be the answer.
 
-            Console.WriteLine("The answer is " + medianValue + ".");
+            int totalFuelUsed = 0;
+
+            for (int loop=0; loop < crabValues.Count; loop++)
+            {
+                if (crabValues[loop] < medianValue)
+                {
+                    totalFuelUsed += Convert.ToInt32(medianValue) - crabValues[loop];
+                }
+                else if (crabValues[loop] > medianValue)
+                {
+                    totalFuelUsed += crabValues[loop] - Convert.ToInt32(medianValue);
+                }
+            }
+
+            Console.WriteLine("The median is " + medianValue + ".");
+            Console.WriteLine("The total fule used is " + totalFuelUsed + ".");
             Console.WriteLine("");
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
             Console.WriteLine("Press any key to continue.");
