@@ -21,6 +21,7 @@ namespace Part_1
     {
         static void Main(string[] args)
         {
+            //read input
             var lines = File.ReadLines(@"C:\Users\astobart\OneDrive\Work\Code\Advent of Code\2021\Advent-of-Code-2021\Day 1\Part 1\input.txt");
 
             var linesList = new List<string>(lines);
