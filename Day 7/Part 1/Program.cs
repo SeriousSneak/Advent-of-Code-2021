@@ -88,7 +88,7 @@ namespace Part1
             }
 
             Console.WriteLine("The median is " + medianValue + ".");
-            Console.WriteLine("The total fule used is " + totalFuelUsed + ".");
+            Console.WriteLine("The total fuel used is " + totalFuelUsed + ".");
             Console.WriteLine("");
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
             Console.WriteLine("Press any key to continue.");
